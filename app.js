@@ -95,16 +95,11 @@ const main = async () => {
 
   const adapterProvider = createProvider(MetaProvider, {
     jwtToken:
-      "EAAO7cfcvkY4BOyDyrYuBba1oZBQJBLoQlr3A4mL7cSgJIIHPtoy3ocoUq2uAielXu6Bsl6qEqXd5S5tOXtTz0pWCYiTF7sh4zZAXm2gQHduQHMZCiRDK3sByBjiIsndWoVIwZBsfmFcjIh9fYMntegedZBghG0Ktq0Bj3HlGNKlaVNgz7uiGkeagHrkKRGH3HjzokAgZBKl3TRSa8b",
+      "EAAO7cfcvkY4BOz5D0QqZCQMYEGYs7ZB5mmsxBbdjDqAiB1VXeWAI5ujXHqaPNv8Xixqyjw01YeKZC5BEAwZCpQwAarx9Mip1o4wFinEq3bLmz1znmXZBXIVMGbpXMiXjloJszmnwk09eFc8ShIY2CN6fx2HBz5ry3ZBgV9MXNrmRHdK19BEvdifNpFvEa78G9FaXfOmKhm16jHl00ZD",
     numberId: "244396062094814",
     verifyToken: "LOQUESEA",
     version: "v16.0",
   });
-  // const adapterProvider = createProvider(TwilioProvider, {
-  //   accountSid: process.env.ACC_SID, //AC4695aa720b4d700a***************
-  //   authToken: process.env.ACC_TOKEN, //3f6fae09f7a1c3534***************
-  //   vendorNumber: process.env.ACC_VENDOR, //+14155238886
-  // });
 
   createBot({
     flow: adapterFlow,
