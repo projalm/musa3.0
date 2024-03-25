@@ -106,7 +106,7 @@ const flowWelcome = addKeyword("hola")
       const acceptName = ctx.body;
 
       if (acceptName === "SI") {
-        await gotoFlow(rejectedName);
+        await gotoFlow(require("./app/rejectedName"));
       }
     }
   )
@@ -137,7 +137,7 @@ const flowWelcome = addKeyword("hola")
     "Claro que sí. ¡Bienvenid@ a esta sesión!",
     null,
     async (ctx, { flowDynamic, gotoFlow }) => {
-      await gotoFlow(mainFlow);
+      await gotoFlow(require("./app/mainFlow"));
     },
     null
   );
