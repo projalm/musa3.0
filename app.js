@@ -135,13 +135,11 @@ const flowWelcome = addKeyword("hola")
   )
   .addAnswer(
     "Claro que sí. ¡Bienvenid@ a esta sesión!",
-    {
-      // media: "https://i.imgur.com/0HpzsEm.png",
-    },
     null,
     async (ctx, { flowDynamic, gotoFlow }) => {
       await gotoFlow(mainFlow);
-    }
+    },
+    null
   );
 
 const mainFlow = addKeyword("MAIN_FLOW")
