@@ -1,0 +1,79 @@
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'hola',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_67c4e497-a1cc-4ab7-97e2-27365285d6ac',
+  keyword: 'key_4fb2aa56-0ddf-4453-b680-785662dfacfd',
+  answer: '🌈 ¡En este viaje de aprendizaje, estaré siempre a tu lado! 🐾💃 Soy uno de los personajes de Musa, pero en esta ocasión, llevo los colores de *atingi*. 🌟💼 🐾💃 \n' +
+    '\n' +
+    '¿Por qué me estoy pintando de los colores de atingi? Bueno, es porque en este viaje educativo, Musa y atingi se han unido para brindarte lo mejor de ambos mundos: la creatividad y la diversión de Musa con la potencia y el conocimiento de atingi. 🌟💼',
+  options: {
+    media: null,
+    buttons: [ [Object] ],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'b46f1da5d42ee257150796f377158010'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '51906531829',
+  to: '15550866815',
+  body: '¡GENIAL!',
+  title_button_reply: '¡GENIAL!',
+  title_list_reply: undefined,
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_9f688174-ff0c-4bd5-a137-fab33fb4b45e',
+  keyword: 'ans_67c4e497-a1cc-4ab7-97e2-27365285d6ac',
+  answer: '📱 Para que estemos más conectad@s, no olvides guardar este número en tus contactos. Ah, y por cierto, *¿cómo te llamas?* Me encantaría conocerte mejor. 👀',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd7ca9a169c7e90e64b05c1434a81d56c'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'jose',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_04d43cc0-ab20-4e08-b73e-44a2570c491f',
+  keyword: 'ans_9f688174-ff0c-4bd5-a137-fab33fb4b45e',
+  answer: '😁 ¡Muchas gracias, undefined! A partir de ahora, usaré ese nombre para dirigirme a ti. ¿Te parece bien?',
+  options: {
+    media: null,
+    buttons: [ [Object], [Object] ],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'bf3ef46f388598e41455a9d5d5bfb9f9'
+}
