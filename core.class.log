@@ -6,8 +6,8 @@
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_67c4e497-a1cc-4ab7-97e2-27365285d6ac',
-  keyword: 'key_4fb2aa56-0ddf-4453-b680-785662dfacfd',
+  ref: 'ans_8c72f3ef-8c2c-4884-9559-1d4d90141219',
+  keyword: 'key_ee97861b-2cef-45c1-81e5-d2833df9e26e',
   answer: '🌈 ¡En este viaje de aprendizaje, estaré siempre a tu lado! 🐾💃 Soy uno de los personajes de Musa, pero en esta ocasión, llevo los colores de *atingi*. 🌟💼 🐾💃 \n' +
     '\n' +
     '¿Por qué me estoy pintando de los colores de atingi? Bueno, es porque en este viaje educativo, Musa y atingi se han unido para brindarte lo mejor de ambos mundos: la creatividad y la diversión de Musa con la potencia y el conocimiento de atingi. 🌟💼',
@@ -23,7 +23,7 @@
     keyword: {},
     callback: false
   },
-  refSerialize: 'b46f1da5d42ee257150796f377158010'
+  refSerialize: '4b2b88143e9953b3108da32429196e03'
 }
 [handleMsg]:  {
   type: 'interactive',
@@ -35,8 +35,8 @@
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9f688174-ff0c-4bd5-a137-fab33fb4b45e',
-  keyword: 'ans_67c4e497-a1cc-4ab7-97e2-27365285d6ac',
+  ref: 'ans_08898ea5-8878-4161-b4a5-4bce210b695a',
+  keyword: 'ans_8c72f3ef-8c2c-4884-9559-1d4d90141219',
   answer: '📱 Para que estemos más conectad@s, no olvides guardar este número en tus contactos. Ah, y por cierto, *¿cómo te llamas?* Me encantaría conocerte mejor. 👀',
   options: {
     media: null,
@@ -48,20 +48,20 @@
     ref: null,
     nested: [],
     keyword: {},
-    callback: true
+    callback: false
   },
-  refSerialize: 'd7ca9a169c7e90e64b05c1434a81d56c'
+  refSerialize: 'fd5e8c486eaeb52b8f618e40f978374b'
 }
 [handleMsg]:  {
   type: 'text',
   from: '51906531829',
   to: '15550866815',
-  body: 'jose',
+  body: 'dsdsa',
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_04d43cc0-ab20-4e08-b73e-44a2570c491f',
-  keyword: 'ans_9f688174-ff0c-4bd5-a137-fab33fb4b45e',
+  ref: 'ans_45c4753a-8d91-4c47-a79d-a6c7d82cc20e',
+  keyword: 'ans_08898ea5-8878-4161-b4a5-4bce210b695a',
   answer: '😁 ¡Muchas gracias, undefined! A partir de ahora, usaré ese nombre para dirigirme a ti. ¿Te parece bien?',
   options: {
     media: null,
@@ -73,7 +73,32 @@
     ref: null,
     nested: [],
     keyword: {},
-    callback: false
+    callback: true
   },
-  refSerialize: 'bf3ef46f388598e41455a9d5d5bfb9f9'
+  refSerialize: '4086276fae89636f5bb259fbaa78da87'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'NO',
+  title_button_reply: 'NO',
+  title_list_reply: undefined,
+  pushName: 'Leon🦁'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'dsadsa',
+  pushName: 'Leon🦁'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'OK',
+  title_button_reply: 'OK',
+  title_list_reply: undefined,
+  pushName: 'Leon🦁'
 }
