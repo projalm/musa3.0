@@ -2,103 +2,16 @@
   type: 'text',
   from: '51906531829',
   to: '15550866815',
-  body: 'hola',
+  body: 'media',
   pushName: 'Leon🦁'
 }
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_8c72f3ef-8c2c-4884-9559-1d4d90141219',
-  keyword: 'key_ee97861b-2cef-45c1-81e5-d2833df9e26e',
-  answer: '🌈 ¡En este viaje de aprendizaje, estaré siempre a tu lado! 🐾💃 Soy uno de los personajes de Musa, pero en esta ocasión, llevo los colores de *atingi*. 🌟💼 🐾💃 \n' +
-    '\n' +
-    '¿Por qué me estoy pintando de los colores de atingi? Bueno, es porque en este viaje educativo, Musa y atingi se han unido para brindarte lo mejor de ambos mundos: la creatividad y la diversión de Musa con la potencia y el conocimiento de atingi. 🌟💼',
-  options: {
-    media: null,
-    buttons: [ [Object] ],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: '4b2b88143e9953b3108da32429196e03'
-}
-[handleMsg]:  {
-  type: 'interactive',
-  from: '51906531829',
-  to: '15550866815',
-  body: '¡GENIAL!',
-  title_button_reply: '¡GENIAL!',
-  title_list_reply: undefined,
-  pushName: 'Leon🦁'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_08898ea5-8878-4161-b4a5-4bce210b695a',
-  keyword: 'ans_8c72f3ef-8c2c-4884-9559-1d4d90141219',
-  answer: '📱 Para que estemos más conectad@s, no olvides guardar este número en tus contactos. Ah, y por cierto, *¿cómo te llamas?* Me encantaría conocerte mejor. 👀',
-  options: {
-    media: null,
-    buttons: [],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: false
-  },
-  refSerialize: 'fd5e8c486eaeb52b8f618e40f978374b'
-}
-[handleMsg]:  {
-  type: 'text',
-  from: '51906531829',
-  to: '15550866815',
-  body: 'dsdsa',
-  pushName: 'Leon🦁'
-}
-[QUEUE_SE_ENVIO]:  {
-  ref: 'ans_45c4753a-8d91-4c47-a79d-a6c7d82cc20e',
-  keyword: 'ans_08898ea5-8878-4161-b4a5-4bce210b695a',
-  answer: '😁 ¡Muchas gracias, undefined! A partir de ahora, usaré ese nombre para dirigirme a ti. ¿Te parece bien?',
-  options: {
-    media: null,
-    buttons: [ [Object], [Object] ],
-    capture: true,
-    child: null,
-    delay: 0,
-    idle: null,
-    ref: null,
-    nested: [],
-    keyword: {},
-    callback: true
-  },
-  refSerialize: '4086276fae89636f5bb259fbaa78da87'
-}
-[handleMsg]:  {
-  type: 'interactive',
-  from: '51906531829',
-  to: '15550866815',
-  body: 'NO',
-  title_button_reply: 'NO',
-  title_list_reply: undefined,
-  pushName: 'Leon🦁'
-}
-[handleMsg]:  {
-  type: 'text',
-  from: '51906531829',
-  to: '15550866815',
-  body: 'dsadsa',
-  pushName: 'Leon🦁'
-}
-[handleMsg]:  {
-  type: 'interactive',
-  from: '51906531829',
-  to: '15550866815',
-  body: 'OK',
-  title_button_reply: 'OK',
-  title_list_reply: undefined,
-  pushName: 'Leon🦁'
-}
+Error en sendProviderAndSave (ID ans_f08fe965-951b-439f-a1c3-0b23fb0796c8): TypeError: this.sendFile is not a function
+    at MetaProvider.sendMedia (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\provider\lib\meta\index.cjs:694:21)
+    at async Object.ans_f08fe965-951b-439f-a1c3-0b23fb0796c8 (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\app.js:75:5)
+    at async runContext (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1444:17)
+    at async cbEveryCtx (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1471:13)
+    at async resolveCbEveryCtx (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1401:29)
+    at async Object.promiseInFunc (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1238:25)
+    at async C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:529:35
+    at async Promise.allSettled (index 0)
+    at async Queue.processQueue (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:547:13)
