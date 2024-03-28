@@ -298,6 +298,7 @@ const mainFlow = addKeyword("MAIN_FLOW")
         await globalState.update({ points: 1 });
         await flowDynamic("¡Correcto! 👍🏼🎊");
       } else if (ctx.body === "A" || ctx.body === "C") {
+        await globalState.update({ points: 0 });
         await flowDynamic(
           "🔄 La respuesta correcta es la B😁💬 *Continuemos.*"
         );
