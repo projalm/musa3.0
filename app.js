@@ -67,8 +67,8 @@ const MockAdapter = require("@bot-whatsapp/database/mock");
 
 const typeOfMessage = addKeyword("media")
   .addAnswer(
-    ` MENSAJES PDF "OK" PARA CONTINUAR`,
-    { capture: true },
+    "ESCRIBIR CUALQUIER COSA PARA CONTINUAR POR CADA TIPO DE MENSANE MOSTRADO",
+    { capture: true, buttons: [{ body: "OK" }] },
     async (ctx, ctxFn) => {
       const id = ctx.from;
       const file =
@@ -79,6 +79,11 @@ const typeOfMessage = addKeyword("media")
         (mediaInput = file)
         // (captionMessage = `PDF file: ${file}`)
       );
+
+      return await ctxFn.flowDynamic([
+        "PDF",
+        { delay: 1500, buttons: [{ body: "OK" }] },
+      ]);
       // await flowDynamic([
       //   "Enviando",
       //   {
@@ -90,103 +95,104 @@ const typeOfMessage = addKeyword("media")
       // ]);
     }
   )
-  .addAnswer(
-    ` MENSAJES VIDEO "OK" PARA CONTINUAR`,
-    { capture: true },
-    async (ctx, ctxFn) => {
-      const id = ctx.from;
-      const file = "https://bot-whatsapp.netlify.app/videos/console.mp4";
-      await ctxFn.provider.sendMedia(
-        (number = id),
-        (text = ""),
-        "https://bot-whatsapp.netlify.app/videos/console.mp4"
-        // (captionMessage = `PDF file: ${file}`)
-      );
-      // await flowDynamic([
-      //   "Enviando",
-      //   {
-      //     body: "PDF File",
-      //     media:
-      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
-      //     delay: 500,
-      //   },
-      // ]);
-    }
-  )
-  .addAnswer(
-    `MENSAJE CONTACTOS "OK" PARA CONTINUAR`,
-    { capture: true, delay: 1000 },
-    async (ctx, ctxFn) => {
-      const id = ctx.from;
-      await ctxFn.provider.sendContacts(
-        (number = id),
-        [
-          {
-            name: "Jose Leon",
-            first_name: "FDSFD",
-            last_name: "FDS",
-            middle_name: "",
-            suffix: "",
-            prefix: "",
-            birthday: "",
-            phones: [{ phone: "5190653829", wa_id: "", type: "" }],
-            emails: [{ email: "correo@corre.com", type: "" }],
-            company: "",
-            department: "",
-            title: "",
-            urls: [{ url: "", type: "" }],
-            addresses: [
-              {
-                street: "",
-                city: "",
-                state: "",
-                zip: "",
-                country: "",
-                country_code: "",
-                type: "",
-              },
-            ],
-          },
-        ]
-        // (captionMessage = `PDF file: ${file}`)
-      );
-      // await flowDynamic([
-      //   "Enviando",
-      //   {
-      //     body: "PDF File",
-      //     media:
-      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
-      //     delay: 500,
-      //   },
-      // ]);
-    }
-  )
-  .addAnswer(
-    `MENSAJE UBICACION "OK" PARA CONTINUAR`,
-    { capture: true, delay: 1000 },
-    async (ctx, ctxFn) => {
-      const id = ctx.from;
-      await ctxFn.provider.sendLocation(
-        (number = id),
+  .addAction({ capture: true }, async (ctx, ctxFn) => {
+    const id = ctx.from;
+    const file = "https://bot-whatsapp.netlify.app/videos/console.mp4";
+    await ctxFn.provider.sendMedia(
+      (number = id),
+      (text = ""),
+      "https://bot-whatsapp.netlify.app/videos/console.mp4"
+
+      // (captionMessage = `PDF file: ${file}`)
+    );
+    return await ctxFn.flowDynamic([
+      "VIDEO",
+      { delay: 1500, buttons: [{ body: "OK" }] },
+    ]);
+    // await flowDynamic([
+    //   "Enviando",
+    //   {
+    //     body: "PDF File",
+    //     media:
+    //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+    //     delay: 500,
+    //   },
+    // ]);
+  })
+  .addAction({ capture: true }, async (ctx, ctxFn) => {
+    const id = ctx.from;
+    await ctxFn.provider.sendContacts(
+      (number = id),
+      [
         {
-          long_number: -12.136634097758094,
-          lat_number: -76.98518454665098,
-          name: "Surco",
-          address: "Jr. Monte Ebano 364, Lima 15039",
-        }
-        // (captionMessage = `PDF file: ${file}`)
-      );
-      // await flowDynamic([
-      //   "Enviando",
-      //   {
-      //     body: "PDF File",
-      //     media:
-      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
-      //     delay: 500,
-      //   },
-      // ]);
-    }
-  )
+          name: "Jose Leon",
+          first_name: "FDSFD",
+          last_name: "FDS",
+          middle_name: "",
+          suffix: "",
+          prefix: "",
+          birthday: "",
+          phones: [{ phone: "5190653829", wa_id: "", type: "" }],
+          emails: [{ email: "correo@corre.com", type: "" }],
+          company: "",
+          department: "",
+          title: "",
+          urls: [{ url: "", type: "" }],
+          addresses: [
+            {
+              street: "",
+              city: "",
+              state: "",
+              zip: "",
+              country: "",
+              country_code: "",
+              type: "",
+            },
+          ],
+        },
+      ]
+      // (captionMessage = `PDF file: ${file}`)
+    );
+    return await ctxFn.flowDynamic([
+      "CONTACTO",
+      { delay: 1500, buttons: { body: "OK" } },
+    ]);
+    // await flowDynamic([
+    //   "Enviando",
+    //   {
+    //     body: "PDF File",
+    //     media:
+    //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+    //     delay: 500,
+    //   },
+    // ]);
+  })
+  .addAction({ capture: true }, async (ctx, ctxFn) => {
+    const id = ctx.from;
+    await ctxFn.provider.sendLocation(
+      (number = id),
+      {
+        long_number: -12.136634097758094,
+        lat_number: -76.98518454665098,
+        name: "Surco",
+        address: "Jr. Monte Ebano 364, Lima 15039",
+      }
+      // (captionMessage = `PDF file: ${file}`)
+    );
+    // await flowDynamic([
+    //   "Enviando",
+    //   {
+    //     body: "PDF File",
+    //     media:
+    //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+    //     delay: 500,
+    //   },
+    // ]);
+    return await ctxFn.flowDynamic([
+      "Ubicacion",
+      { delay: 1500, buttons: { body: "OK" }, capture: true },
+    ]);
+  })
   .addAnswer(
     `Son todos por el momento, proximamente mas`,
     null,
@@ -219,7 +225,7 @@ const typeOfMessage = addKeyword("media")
 // }
 // );
 
-const resetAll = addKeyword("reiniciar").addAnswer(
+const resetAll = addKeyword(["reiniciar", "Reiniciar", "REINICIAR"]).addAnswer(
   "🤓De acuerdo, volvamos al inicio de todo ⏪",
   null,
   (ctx, { gotoFlow }) => {
@@ -281,7 +287,7 @@ const mainFlow = addKeyword("MAIN_FLOW")
     { capture: true, buttons: [{ body: "¡ES CIERTO!" }] }
   )
   .addAnswer(
-    "${user.name}, ha llegado el momento de poner en práctica todo lo que hemos aprendido hoy. ¡Vamos a hacerlo junt@s! 🚀📚💪",
+    "Ha llegado el momento de poner en práctica todo lo que hemos aprendido hoy. ¡Vamos a hacerlo junt@s! 🚀📚💪",
     { capture: true, buttons: [{ body: "¡EMPECEMOS!" }] }
   )
   .addAnswer(
@@ -293,7 +299,7 @@ const mainFlow = addKeyword("MAIN_FLOW")
         await flowDynamic("¡Correcto! 👍🏼🎊");
       } else if (ctx.body === "A" || ctx.body === "C") {
         await flowDynamic(
-          "🔄 ${user.name}, la respuesta correcta es la B😁💬 *Continuemos.*"
+          "🔄 La respuesta correcta es la B😁💬 *Continuemos.*"
         );
       } else {
         return fallBack();
@@ -310,7 +316,7 @@ const mainFlow = addKeyword("MAIN_FLOW")
         await flowDynamic("¡Correcto! 👍🏼🎊");
       } else if (ctx.body === "A" || ctx.body === "B") {
         await flowDynamic(
-          "🔄 ${user.name}, la respuesta correcta es la C😁💬 *Continuemos.*"
+          "🔄 La respuesta correcta es la C😁💬 *Continuemos.*"
         );
       } else {
         return fallBack();
@@ -390,7 +396,7 @@ const rejectedName = addKeyword("REJECTED_NAME").addAnswer(
   [afterTakeName]
 );
 
-const flowWelcome = addKeyword("hola")
+const flowWelcome = addKeyword(["hola", "Hola", "HOLA"])
   .addAnswer(
     "Imagen",
     {
@@ -418,10 +424,19 @@ const flowWelcome = addKeyword("hola")
     "📱 Para que estemos más conectad@s, no olvides guardar este número en tus contactos. Ah, y por cierto, *¿cómo te llamas?* Me encantaría conocerte mejor. 👀",
     {
       capture: true,
+    },
+    (ctx, { globalState, flowDynamic }) => {
+      globalState.update({ name: ctx.body });
     }
   )
+  .addAction(null, async (ctx, { globalState, flowDynamic }) => {
+    let name = globalState.get("name");
+    return await flowDynamic(
+      `😁 ¡Muchas gracias, ${name}! A partir de ahora, usaré ese nombre para dirigirme a ti`
+    );
+  })
   .addAnswer(
-    `😁 ¡Muchas gracias, undefined! A partir de ahora, usaré ese nombre para dirigirme a ti. ¿Te parece bien?`,
+    `¿Te parece bien?`,
     {
       capture: true,
       buttons: [{ body: "SI" }, { body: "NO" }],
@@ -435,7 +450,7 @@ const flowWelcome = addKeyword("hola")
     }
   )
   .addAnswer(
-    "¡Excelente! DENTRO😄 Ahora, tengo dos preguntas para registrar tus datos y poder enviarte tu constancia de participación al finalizar esta sesión de aprendizaje.",
+    "¡Excelente!😄 Ahora, tengo dos preguntas para registrar tus datos y poder enviarte tu constancia de participación al finalizar esta sesión de aprendizaje.",
     {
       capture: true,
       buttons: [{ body: "OK" }],
@@ -526,7 +541,7 @@ const main = async () => {
 
   const adapterProvider = createProvider(MetaProvider, {
     jwtToken:
-      "EAAO7cfcvkY4BO35PoMHF5nkjMk9VzGTbkqfwj2rDSmlYeGZBWwIHjYO3jOyevc8YajQZAu2hQWEMkoZBptXCddGxZBEv9aAErsWfAJASGXBv8NxAIZCpWlwX8l5ZB7GZBv2uOLpOX3ddWdcXjOgPXH9lGEC6bIYWcw7pX2Fp1vVmg2jWaDCdRlmavCrlaP6kruhLZCRZAh4m84lJ2c68ZD",
+      "EAAO7cfcvkY4BO9SZA4qU4gfftQuZC3Q42WsA3YnuLsr2PlTkhTXFXQiiMxFe92gTZAQKjjDeeFmmJxTBHbT8KisDvH8B5ZBedzZC18KiaM0bsg66RBMWXHgU8ZA40POjOI0Olb3EzRuibxGEM4cg8SGYK4peNuoViqnT2YJIBDgyIc0AVseAK2ykZCeZBXFjdVVifBL6jUc4WnUh35AZD",
     numberId: "244396062094814",
     verifyToken: "loquesea",
     version: "v16.0",

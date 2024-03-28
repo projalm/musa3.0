@@ -6,12 +6,12 @@
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_c125da19-3f68-4ea7-9b45-c94aa3a48b60',
-  keyword: 'key_a25e2c32-7d11-4b76-8675-0c55ae9f0ae8',
-  answer: ' MENSAJES PDF "OK" PARA CONTINUAR',
+  ref: 'ans_f71df76e-948c-4442-a596-94d8186cb9ee',
+  keyword: 'key_c74f5021-9cfd-4a49-87d1-7f061ad64a3c',
+  answer: 'ESCRIBIR CUALQUIER COSA PARA CONTINUAR POR CADA TIPO DE MENSANE MOSTRADO',
   options: {
     media: null,
-    buttons: [],
+    buttons: [ [Object] ],
     capture: true,
     child: null,
     delay: 0,
@@ -21,19 +21,21 @@
     keyword: {},
     callback: true
   },
-  refSerialize: 'b63d992a92d63b0c83c3a7e5a2ec210b'
+  refSerialize: '4ec59c6416ebfc05fc503e2af142b739'
 }
 [handleMsg]:  {
-  type: 'text',
+  type: 'interactive',
   from: '51906531829',
   to: '15550866815',
   body: 'OK',
+  title_button_reply: 'OK',
+  title_list_reply: undefined,
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_5b29b926-d416-49d0-b5b5-2118f8aac72c',
-  keyword: 'ans_c125da19-3f68-4ea7-9b45-c94aa3a48b60',
-  answer: ' MENSAJES VIDEO "OK" PARA CONTINUAR',
+  ref: 'ans_3fc5d522-b734-4061-bcfb-cd7457fbbd20',
+  keyword: 'ans_f71df76e-948c-4442-a596-94d8186cb9ee',
+  answer: '__capture_only_intended__',
   options: {
     media: null,
     buttons: [],
@@ -46,68 +48,68 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '698c7db9d1b9ae0e726dd932eb58b088'
+  refSerialize: 'f83e63a19e8392422938c2fa1c85496d'
 }
 [handleMsg]:  {
   type: 'text',
   from: '51906531829',
   to: '15550866815',
-  body: 'Ok',
+  body: 'dsa',
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_9807fe0f-3b6c-4570-8afe-6f831ac0ac24',
-  keyword: 'ans_5b29b926-d416-49d0-b5b5-2118f8aac72c',
-  answer: 'MENSAJE CONTACTOS "OK" PARA CONTINUAR',
+  ref: 'ans_6fae6e86-ba44-4ece-a431-63b57f5a1ce5',
+  keyword: 'ans_3fc5d522-b734-4061-bcfb-cd7457fbbd20',
+  answer: '__capture_only_intended__',
   options: {
     media: null,
     buttons: [],
     capture: true,
     child: null,
-    delay: 1000,
+    delay: 0,
     idle: null,
     ref: null,
     nested: [],
     keyword: {},
     callback: true
   },
-  refSerialize: '2521a1a01dd9bb38f3e5a58d302701e6'
+  refSerialize: 'ca3313d9face349c470a631349ee9ec4'
 }
 [handleMsg]:  {
   type: 'text',
   from: '51906531829',
   to: '15550866815',
-  body: 'Ok',
+  body: 'dsa',
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_e847b67c-d74d-4468-a299-f87126fb256d',
-  keyword: 'ans_9807fe0f-3b6c-4570-8afe-6f831ac0ac24',
-  answer: 'MENSAJE UBICACION "OK" PARA CONTINUAR',
+  ref: 'ans_bc8f9d89-ea33-4023-a744-415ce67d18e4',
+  keyword: 'ans_6fae6e86-ba44-4ece-a431-63b57f5a1ce5',
+  answer: '__capture_only_intended__',
   options: {
     media: null,
     buttons: [],
     capture: true,
     child: null,
-    delay: 1000,
+    delay: 0,
     idle: null,
     ref: null,
     nested: [],
     keyword: {},
     callback: true
   },
-  refSerialize: 'e5835df161c533b267ade6b66e4cf900'
+  refSerialize: '06845b66003000f35ce8ea035e41af4b'
 }
 [handleMsg]:  {
   type: 'text',
   from: '51906531829',
   to: '15550866815',
-  body: 'Ok',
+  body: 'dsa',
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_a84b5068-0f6e-4ec9-a4e4-a130d9875d7e',
-  keyword: 'ans_e847b67c-d74d-4468-a299-f87126fb256d',
+  ref: 'ans_d3c6d418-16e5-4123-a3bc-86b954c6cc08',
+  keyword: 'ans_bc8f9d89-ea33-4023-a744-415ce67d18e4',
   answer: 'Son todos por el momento, proximamente mas',
   options: {
     media: null,
@@ -121,23 +123,65 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '4bce016a13ff8d46cdd17fecc38bfe4b'
+  refSerialize: 'cb50960b423e8882a56f34fc2a9d2cf3'
 }
 [handleMsg]:  {
   type: 'text',
   from: '51906531829',
   to: '15550866815',
-  body: 'reiniciar',
+  body: '1',
+  pushName: 'Leon🦁'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'OK',
+  title_button_reply: 'OK',
+  title_list_reply: undefined,
   pushName: 'Leon🦁'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_eb345dfa-9d31-4201-bda3-1d4b11eba1ea',
-  keyword: 'key_54a1dee0-2d36-44ab-8867-20e2bf08a3da',
-  answer: '🤓De acuerdo, volvamos al inicio de todo ⏪',
+  ref: 'ans_6a264251-0118-49b8-95d2-7f419fc96fa1',
+  keyword: 'ans_e7387b6a-a6f9-4750-8c17-75d3cf0e3b59',
+  answer: '🚀 ¡Cuando concluyas esta sesión, estarás listo para comenzar a implementar estrategias y aumentar la presencia digital de tu negocio! 📈📊\n' +
+    '\n' +
+    '\n' +
+    '✅ Y recibirás tu constancia de participación 🏆📜.',
   options: {
     media: null,
-    buttons: [],
-    capture: false,
+    buttons: [ [Object] ],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'ceec53b9b292af6d877413f0e958034f'
+}
+[handleMsg]:  {
+  type: 'interactive',
+  from: '51906531829',
+  to: '15550866815',
+  body: '¡GENIAL!',
+  title_button_reply: '¡GENIAL!',
+  title_list_reply: undefined,
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_8ffe3c44-5931-4da8-89b5-baeeacb38bde',
+  keyword: 'ans_6a264251-0118-49b8-95d2-7f419fc96fa1',
+  answer: '😁💬 ¿Alguna vez te has preguntado cómo las empresas pueden llegar a tanta gente en línea y lograr que sus productos y servicios destaquen en un mundo digital abrumador? \n' +
+    '\n' +
+    '*A.* ¡Sí, siempre he tenido curiosidad sobre eso!\n' +
+    '*B.* No, nunca me lo había planteado.',
+  options: {
+    media: null,
+    buttons: [ [Object], [Object] ],
+    capture: true,
     child: null,
     delay: 0,
     idle: null,
@@ -146,5 +190,35 @@
     keyword: {},
     callback: true
   },
-  refSerialize: '92af20054615d16795f205e3e97ce8db'
+  refSerialize: 'c9099d3a2e96497470bf22c1937f8221'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'salir',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_8ddb8b15-6f33-4b18-8222-dee80e464a51',
+  keyword: 'key_4ae8b88c-59d1-496c-9c00-44f36d312261',
+  answer: '🤓💬 ¿A qué ruta te gustaría acceder hoy? \n' +
+    '\n' +
+    '1️⃣ Curso Principal\n' +
+    '2️⃣Tipos de Mensajes\n' +
+    '\n' +
+    '✍️ *Escribe un número*',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '3f2cc92f660f358f5e7bf6efeee1c1f5'
 }
