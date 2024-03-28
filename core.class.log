@@ -5,13 +5,146 @@
   body: 'media',
   pushName: 'Leon🦁'
 }
-Error en sendProviderAndSave (ID ans_f08fe965-951b-439f-a1c3-0b23fb0796c8): TypeError: this.sendFile is not a function
-    at MetaProvider.sendMedia (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\provider\lib\meta\index.cjs:694:21)
-    at async Object.ans_f08fe965-951b-439f-a1c3-0b23fb0796c8 (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\app.js:75:5)
-    at async runContext (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1444:17)
-    at async cbEveryCtx (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1471:13)
-    at async resolveCbEveryCtx (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1401:29)
-    at async Object.promiseInFunc (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:1238:25)
-    at async C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:529:35
-    at async Promise.allSettled (index 0)
-    at async Queue.processQueue (C:\Users\Leo y Marce\Desktop\musa3.0\base-meta-memory\node_modules\@bot-whatsapp\bot\lib\bundle.bot.cjs:547:13)
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_c125da19-3f68-4ea7-9b45-c94aa3a48b60',
+  keyword: 'key_a25e2c32-7d11-4b76-8675-0c55ae9f0ae8',
+  answer: ' MENSAJES PDF "OK" PARA CONTINUAR',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'b63d992a92d63b0c83c3a7e5a2ec210b'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'OK',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_5b29b926-d416-49d0-b5b5-2118f8aac72c',
+  keyword: 'ans_c125da19-3f68-4ea7-9b45-c94aa3a48b60',
+  answer: ' MENSAJES VIDEO "OK" PARA CONTINUAR',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '698c7db9d1b9ae0e726dd932eb58b088'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'Ok',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_9807fe0f-3b6c-4570-8afe-6f831ac0ac24',
+  keyword: 'ans_5b29b926-d416-49d0-b5b5-2118f8aac72c',
+  answer: 'MENSAJE CONTACTOS "OK" PARA CONTINUAR',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 1000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '2521a1a01dd9bb38f3e5a58d302701e6'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'Ok',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_e847b67c-d74d-4468-a299-f87126fb256d',
+  keyword: 'ans_9807fe0f-3b6c-4570-8afe-6f831ac0ac24',
+  answer: 'MENSAJE UBICACION "OK" PARA CONTINUAR',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 1000,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'e5835df161c533b267ade6b66e4cf900'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'Ok',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a84b5068-0f6e-4ec9-a4e4-a130d9875d7e',
+  keyword: 'ans_e847b67c-d74d-4468-a299-f87126fb256d',
+  answer: 'Son todos por el momento, proximamente mas',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '4bce016a13ff8d46cdd17fecc38bfe4b'
+}
+[handleMsg]:  {
+  type: 'text',
+  from: '51906531829',
+  to: '15550866815',
+  body: 'reiniciar',
+  pushName: 'Leon🦁'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_eb345dfa-9d31-4201-bda3-1d4b11eba1ea',
+  keyword: 'key_54a1dee0-2d36-44ab-8867-20e2bf08a3da',
+  answer: '🤓De acuerdo, volvamos al inicio de todo ⏪',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '92af20054615d16795f205e3e97ce8db'
+}

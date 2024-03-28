@@ -65,30 +65,135 @@ const MockAdapter = require("@bot-whatsapp/database/mock");
 //   [flowSecundario]
 // );
 
-const typeOfMessage = addKeyword("media").addAnswer(
-  "Enviando pdf",
-  null,
-  async (ctx, { provider, flowDynamic }) => {
-    const id = ctx.from;
-    const file =
-      "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf";
-    await provider.sendMedia(
-      (number = id),
-      (text = ""),
-      (mediaInput = `${file}`)
-      // (captionMessage = `PDF file: ${file}`)
-    );
-    // await flowDynamic([
-    //   "Enviando",
-    //   {
-    //     body: "PDF File",
-    //     media:
-    //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
-    //     delay: 500,
-    //   },
-    // ]);
-  }
-);
+const typeOfMessage = addKeyword("media")
+  .addAnswer(
+    ` MENSAJES PDF "OK" PARA CONTINUAR`,
+    { capture: true },
+    async (ctx, ctxFn) => {
+      const id = ctx.from;
+      const file =
+        "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf";
+      await ctxFn.provider.sendMedia(
+        (number = id),
+        (text = ""),
+        (mediaInput = file)
+        // (captionMessage = `PDF file: ${file}`)
+      );
+      // await flowDynamic([
+      //   "Enviando",
+      //   {
+      //     body: "PDF File",
+      //     media:
+      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+      //     delay: 500,
+      //   },
+      // ]);
+    }
+  )
+  .addAnswer(
+    ` MENSAJES VIDEO "OK" PARA CONTINUAR`,
+    { capture: true },
+    async (ctx, ctxFn) => {
+      const id = ctx.from;
+      const file = "https://bot-whatsapp.netlify.app/videos/console.mp4";
+      await ctxFn.provider.sendMedia(
+        (number = id),
+        (text = ""),
+        "https://bot-whatsapp.netlify.app/videos/console.mp4"
+        // (captionMessage = `PDF file: ${file}`)
+      );
+      // await flowDynamic([
+      //   "Enviando",
+      //   {
+      //     body: "PDF File",
+      //     media:
+      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+      //     delay: 500,
+      //   },
+      // ]);
+    }
+  )
+  .addAnswer(
+    `MENSAJE CONTACTOS "OK" PARA CONTINUAR`,
+    { capture: true, delay: 1000 },
+    async (ctx, ctxFn) => {
+      const id = ctx.from;
+      await ctxFn.provider.sendContacts(
+        (number = id),
+        [
+          {
+            name: "Jose Leon",
+            first_name: "FDSFD",
+            last_name: "FDS",
+            middle_name: "",
+            suffix: "",
+            prefix: "",
+            birthday: "",
+            phones: [{ phone: "5190653829", wa_id: "", type: "" }],
+            emails: [{ email: "correo@corre.com", type: "" }],
+            company: "",
+            department: "",
+            title: "",
+            urls: [{ url: "", type: "" }],
+            addresses: [
+              {
+                street: "",
+                city: "",
+                state: "",
+                zip: "",
+                country: "",
+                country_code: "",
+                type: "",
+              },
+            ],
+          },
+        ]
+        // (captionMessage = `PDF file: ${file}`)
+      );
+      // await flowDynamic([
+      //   "Enviando",
+      //   {
+      //     body: "PDF File",
+      //     media:
+      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+      //     delay: 500,
+      //   },
+      // ]);
+    }
+  )
+  .addAnswer(
+    `MENSAJE UBICACION "OK" PARA CONTINUAR`,
+    { capture: true, delay: 1000 },
+    async (ctx, ctxFn) => {
+      const id = ctx.from;
+      await ctxFn.provider.sendLocation(
+        (number = id),
+        {
+          long_number: -12.136634097758094,
+          lat_number: -76.98518454665098,
+          name: "Surco",
+          address: "Jr. Monte Ebano 364, Lima 15039",
+        }
+        // (captionMessage = `PDF file: ${file}`)
+      );
+      // await flowDynamic([
+      //   "Enviando",
+      //   {
+      //     body: "PDF File",
+      //     media:
+      //       "https://download.nikonimglib.com/archive2/payY500AHbkQ02bXMhb14TZo4978/D3300_NT(En)02.pdf",
+      //     delay: 500,
+      //   },
+      // ]);
+    }
+  )
+  .addAnswer(
+    `Son todos por el momento, proximamente mas`,
+    null,
+    (ctx, { gotoFlow }) => {
+      return gotoFlow(mainMenu);
+    }
+  );
 
 // addAnswer(
 // "Hola!",
@@ -123,15 +228,17 @@ const resetAll = addKeyword("reiniciar").addAnswer(
 );
 
 const mainMenu = addKeyword("salir").addAnswer(
-  "🤓💬 ¿A qué ruta te gustaría acceder hoy? \n\n1️⃣ Curso Principal\n\n✍️ *Escribe un número*",
+  "🤓💬 ¿A qué ruta te gustaría acceder hoy? \n\n1️⃣ Curso Principal\n2️⃣Tipos de Mensajes\n\n✍️ *Escribe un número*",
   {
     capture: true,
   },
   (ctx, { fallBack, gotoFlow }) => {
-    if (ctx.body !== "1") {
+    if (ctx.body !== "1" && ctx.body !== "2") {
       return fallBack();
-    } else {
+    } else if (ctx.body === "1") {
       return gotoFlow(mainFlow);
+    } else if (ctx.body === "2") {
+      return gotoFlow(typeOfMessage);
     }
   }
 );
@@ -155,24 +262,14 @@ const mainFlow = addKeyword("MAIN_FLOW")
       capture: true,
       buttons: [{ body: "A" }, { body: "B" }],
     },
-    async (ctx, { flowDynamic, fallBack, addAnswer }) => {
+    async (ctx, { flowDynamic, fallBack }) => {
       if (ctx.body === "A") {
         await flowDynamic(
-          "Entiendo, hoy vamos a despejar todas tus dudas y nos adentrarnos en el mundo del marketing digital. Descubriremos cómo puede permitirnos llegar a una audiencia amplia y obtener beneficios sorprendentes. 😊🌐🚀",
-          [
-            {
-              capture: true,
-              buttons: [{ body: "OK" }],
-            },
-          ]
+          "Entiendo, hoy vamos a despejar todas tus dudas y nos adentrarnos en el mundo del marketing digital. Descubriremos cómo puede permitirnos llegar a una audiencia amplia y obtener beneficios sorprendentes. 😊🌐🚀"
         );
       } else if (ctx.body === "B") {
         await flowDynamic(
-          "¡No hay problema! Estás a punto de explorar qué es el marketing digital y cómo permite a las empresas alcanzar una amplia audiencia y obtener muchos beneficios",
-          {
-            capture: true,
-            buttons: [{ body: "OK" }],
-          }
+          "¡No hay problema! Estás a punto de explorar qué es el marketing digital y cómo permite a las empresas alcanzar una amplia audiencia y obtener muchos beneficios"
         );
       } else {
         return fallBack();
@@ -182,6 +279,71 @@ const mainFlow = addKeyword("MAIN_FLOW")
   .addAnswer(
     "anteriormente, el marketing se hacía por medios tradicionales como anuncios en periódicos, revistas, vallas publicitarias, radio y televisión. 📰📺\n\nSin embargo, en la era digital actual, el marketing ha experimentado una transformación significativa. 🌐 Pues se ha movido en gran medida hacia el ámbito digital.",
     { capture: true, buttons: [{ body: "¡ES CIERTO!" }] }
+  )
+  .addAnswer(
+    "${user.name}, ha llegado el momento de poner en práctica todo lo que hemos aprendido hoy. ¡Vamos a hacerlo junt@s! 🚀📚💪",
+    { capture: true, buttons: [{ body: "¡EMPECEMOS!" }] }
+  )
+  .addAnswer(
+    "😁💬 *¿Qué es el marketing digital y en qué se diferencia del marketing tradicional?*\n\n*A)* El marketing digital se basa únicamente en anuncios en televisión, mientras que el marketing tradicional se enfoca en anuncios en línea.\n\n*B)* El marketing digital utiliza canales y estrategias en línea para promocionar productos o servicios, mientras que el marketing tradicional se basa en anuncios impresos y medios tradicionales.\n\n*C)* El marketing digital es más costoso que el marketing tradicional.",
+    { capture: true, buttons: [{ body: "A" }, { body: "B" }, { body: "C" }] },
+    async (ctx, { flowDynamic, fallBack, globalState }) => {
+      if (ctx.body === "B") {
+        await globalState.update({ points: 1 });
+        await flowDynamic("¡Correcto! 👍🏼🎊");
+      } else if (ctx.body === "A" || ctx.body === "C") {
+        await flowDynamic(
+          "🔄 ${user.name}, la respuesta correcta es la B😁💬 *Continuemos.*"
+        );
+      } else {
+        return fallBack();
+      }
+    }
+  )
+  .addAnswer(
+    "😎 *¿Cuál de las siguientes no es una ventaja del marketing digital?*\n\n*A)* Mayor alcance\n*B)* Resultados mensurables\n*C)* Experiencia táctil y sensorial",
+    { capture: true, buttons: [{ body: "A" }, { body: "B" }, { body: "C" }] },
+    async (ctx, { flowDynamic, fallBack, globalState }) => {
+      if (ctx.body === "C") {
+        let data = globalState.get("points");
+        await globalState.update({ points: +data + 1 });
+        await flowDynamic("¡Correcto! 👍🏼🎊");
+      } else if (ctx.body === "A" || ctx.body === "B") {
+        await flowDynamic(
+          "🔄 ${user.name}, la respuesta correcta es la C😁💬 *Continuemos.*"
+        );
+      } else {
+        return fallBack();
+      }
+    }
+  )
+  .addAnswer(
+    "👌 *¿Cuál de las siguientes estrategias de marketing digital se centra en compartir contenido valioso, como blogs, videos y más, para atraer a la audiencia?*\n*A)* Marketing en Redes Sociales\n*B)* Marketing de Afiliados\n*C)* Marketing de Contenidos",
+    { capture: true, buttons: [{ body: "A" }, { body: "B" }, { body: "C" }] },
+    async (ctx, { flowDynamic, fallBack, globalState }) => {
+      if (ctx.body === "C") {
+        let data = globalState.get("points");
+        await globalState.update({ points: +data + 1 });
+        await flowDynamic("¡Correcto! 👍🏼🎊");
+      } else if (ctx.body === "A" || ctx.body === "B") {
+        await flowDynamic(
+          "🔄 ${user.name}, la respuesta correcta es la C😁💬 *Continuemos.*"
+        );
+      } else {
+        return fallBack();
+      }
+    }
+  )
+  .addAction(async (_, { flowDynamic, globalState }) => {
+    const points = globalState.get("points");
+    await flowDynamic(`🤩 ¡OK!  Has acertado ${points} de 3 preguntas.`);
+  })
+  .addAnswer(
+    "🥳 Gracias por tu participación.\n\n🟩🟩🟩🟩🟩🟩 👾",
+    { capture: true, buttons: [{ body: "CONTINUAR" }] },
+    (_, { gotoFlow }) => {
+      return gotoFlow(mainMenu);
+    }
   );
 
 const afterTakeName = addKeyword("AFTER_TAKE_NAME")
@@ -232,23 +394,24 @@ const flowWelcome = addKeyword("hola")
   .addAnswer(
     "Imagen",
     {
-      capture: true,
-      // media:
-      //   "https://testbotmusa.blob.core.windows.net/img-chatbot/atingiWelcomeOne.jpg",
-    },
-    async (ctx, { provider }) => {
-      await provider.sendMedia(
-        ctx.from,
-        "TEXTO",
-        "https://testbotmusa.blob.core.windows.net/img-chatbot/atingiWelcomeOne.jpg"
-      );
+      // capture: true,
+      media:
+        "https://testbotmusa.blob.core.windows.net/img-chatbot/atingiWelcomeOne.jpg",
     }
+    // async (ctx, { provider }) => {
+    //   await provider.sendMedia(
+    //     ctx.from,
+    //     "TEXTO",
+    //     "https://testbotmusa.blob.core.windows.net/img-chatbot/atingiWelcomeOne.jpg"
+    //   );
+    // }
   )
   .addAnswer(
     "🌈 ¡En este viaje de aprendizaje, estaré siempre a tu lado! 🐾💃 Soy uno de los personajes de Musa, pero en esta ocasión, llevo los colores de *atingi*. 🌟💼 🐾💃 \n\n¿Por qué me estoy pintando de los colores de atingi? Bueno, es porque en este viaje educativo, Musa y atingi se han unido para brindarte lo mejor de ambos mundos: la creatividad y la diversión de Musa con la potencia y el conocimiento de atingi. 🌟💼",
     {
       capture: true,
       buttons: [{ body: "¡GENIAL!" }],
+      delay: 1000,
     }
   )
   .addAnswer(
@@ -282,6 +445,16 @@ const flowWelcome = addKeyword("hola")
     "💁‍♂️💁‍♀️ Dime, ¿con qué género te identificas?\n\n*A.* Femenino\n*B.* Masculino\n*C.* Otro\n*D.* Prefiero no decirlo\n\n✍️ *Escribe una letra entre A y D.*",
     {
       capture: true,
+    },
+    (ctx, { fallBack }) => {
+      if (
+        ctx.body !== "A" &&
+        ctx.body !== "B" &&
+        ctx.body !== "C" &&
+        ctx.body !== "D"
+      ) {
+        return fallBack();
+      }
     }
   )
   .addAnswer(
@@ -353,7 +526,7 @@ const main = async () => {
 
   const adapterProvider = createProvider(MetaProvider, {
     jwtToken:
-      "EAAO7cfcvkY4BOy4m8rtlmHzWfuiUWFOTZAVaAOg7MigClSz0yaW1vdVQRQ0wZB858OIDCtGzGl1P38edAb3T6VChW5iH6OyweQzdjpiARHToXkgesWbyl6gI3oUjvWOyWHlZClKLeqYvJcWVp8IHOOrjoYMu711NWsYsZBbibARJXNbVP76kJZCxZBHbM6xYmWHQfmGQUfHZANBYusZD",
+      "EAAO7cfcvkY4BO35PoMHF5nkjMk9VzGTbkqfwj2rDSmlYeGZBWwIHjYO3jOyevc8YajQZAu2hQWEMkoZBptXCddGxZBEv9aAErsWfAJASGXBv8NxAIZCpWlwX8l5ZB7GZBv2uOLpOX3ddWdcXjOgPXH9lGEC6bIYWcw7pX2Fp1vVmg2jWaDCdRlmavCrlaP6kruhLZCRZAh4m84lJ2c68ZD",
     numberId: "244396062094814",
     verifyToken: "loquesea",
     version: "v16.0",
